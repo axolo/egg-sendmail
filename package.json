@@ -1,0 +1,69 @@
+{
+  "name": "egg-sendmail",
+  "version": "0.1.0",
+  "description": "egg-sendmail",
+  "eggPlugin": {
+    "name": "sendmail"
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "smtp",
+    "sendmail",
+    "send mail",
+    "egg-sendmail",
+    "sendmail egg"
+  ],
+  "dependencies": {
+    "handlebars": "^4.1.2",
+    "lodash": "^4.17.11",
+    "marked": "^0.6.2",
+    "nodemailer": "^6.1.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "docdash": "^1.1.0",
+    "egg": "^2.16.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "jsdoc": "^3.5.5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "autod": "autod",
+    "jsdoc": "jsdoc ./lib -c jsdoc.json --readme README.md"
+  },
+  "files": [
+    "app.js",
+    "agent.js",
+    "config",
+    "app",
+    "lib"
+  ],
+  "ci": {
+    "version": "8, 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axolo/egg-sendmail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/axolo/egg-sendmail/issues"
+  },
+  "homepage": "https://github.com/axolo/egg-sendmail#readme",
+  "author": "Yueming Fang",
+  "license": "MIT"
+}
