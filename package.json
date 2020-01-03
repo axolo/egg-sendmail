@@ -1,5 +1,5 @@
 {
-  "name": "egg-sendmail",
+  "name": "@axolo/egg-sendmail",
   "version": "0.1.0",
   "description": "egg-sendmail",
   "eggPlugin": {
