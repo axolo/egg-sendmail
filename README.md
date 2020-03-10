@@ -22,8 +22,7 @@ exports.sendmail = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.sendmail = {
-};
+exports.sendmail = {};
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.

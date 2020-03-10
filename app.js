@@ -2,14 +2,11 @@
 
 const Sendmail = require('./lib/sendmail');
 
-function createSendmail(config, app) {
-  const sendmail = new Sendmail(config, app);
+function createSendmail(config) {
+  const sendmail = new Sendmail(config);
   return sendmail;
 }
 
 module.exports = app => {
-  // for signle client config =>
-  // app.sendmail = new Sendmail(app.config.sendmail)
-  // for multi clients config =>
   app.addSingleton('sendmail', createSendmail);
 };

@@ -1,6 +1,6 @@
 {
   "name": "@axolo/egg-sendmail",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "egg-sendmail",
   "eggPlugin": {
     "name": "sendmail"
@@ -16,25 +16,25 @@
     "sendmail egg"
   ],
   "dependencies": {
-    "handlebars": "^4.1.2",
-    "lodash": "^4.17.11",
-    "marked": "^0.6.2",
-    "nodemailer": "^6.1.0"
+    "handlebars": "^4.7.3",
+    "lodash": "^4.17.15",
+    "marked": "^0.8.0",
+    "nodemailer": "^6.4.4"
   },
   "devDependencies": {
-    "autod": "^3.0.1",
+    "autod": "^3.1.0",
     "autod-egg": "^1.1.0",
-    "docdash": "^1.1.0",
-    "egg": "^2.16.0",
-    "egg-bin": "^4.11.0",
-    "egg-ci": "^1.11.0",
-    "egg-mock": "^3.21.0",
-    "eslint": "^5.13.0",
-    "eslint-config-egg": "^7.1.0",
-    "jsdoc": "^3.5.5"
+    "docdash": "^1.2.0",
+    "egg": "^2.26.0",
+    "egg-bin": "^4.14.1",
+    "egg-ci": "^1.13.1",
+    "egg-mock": "^4.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-egg": "^8.0.1",
+    "jsdoc": "^3.6.3"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   },
   "scripts": {
     "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
@@ -47,10 +47,8 @@
     "jsdoc": "jsdoc ./lib -c jsdoc.json --readme README.md"
   },
   "files": [
-    "app.js",
-    "agent.js",
     "config",
-    "app",
+    "app.js",
     "lib"
   ],
   "ci": {
