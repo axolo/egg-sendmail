@@ -29,7 +29,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/axolo" target="_blank" class="menu-item" id="website_link" >GitHub</a></h2><h3>Classes</h3><ul><li><a href="Sendmail.html">Sendmail</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Sendmail.html#send">send</a></li><li data-type='method' style='display: none;'><a href="Sendmail.html#template">template</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/axolo/egg-sendmail" target="_blank" class="menu-item" id="website_link" >GitHub</a></h2><h3>Classes</h3><ul><li><a href="Sendmail.html">Sendmail</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Sendmail.html#send">send</a></li><li data-type='method' style='display: none;'><a href="Sendmail.html#template">template</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -61,7 +61,7 @@
 
     
 
-    <h4 class="name" id="Sendmail"><span class="type-signature"></span>new Sendmail<span class="signature">(config)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Sendmail"><span class="type-signature"></span>new Sendmail<span class="signature">(config<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -73,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sendmail.js.html">sendmail.js</a>, <a href="sendmail.js.html#line11">line 11</a>
+        <a href="sendmail.js.html">sendmail.js</a>, <a href="sendmail.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -114,6 +114,7 @@
 
 <div class="description usertext">
     <p><strong>构造器</strong></p>
+<p><code>config.nodemailer</code>：从外部指定<code>nodemailer</code>，若未指定则使用内置<code>nodemailer</code>。</p>
 </div>
 
 
@@ -139,7 +140,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -164,7 +169,23 @@
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
             
 
             <td class="description last"><p>插件配置</p></td>
@@ -230,7 +251,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sendmail.js.html">sendmail.js</a>, <a href="sendmail.js.html#line26">line 26</a>
+        <a href="sendmail.js.html">sendmail.js</a>, <a href="sendmail.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -347,7 +368,8 @@
                 </td>
             
 
-            <td class="description last"><p>参数</p></td>
+            <td class="description last"><p>参数，<code>nodemailer</code>的<code>message</code>，支持其所有参数。
+但不会被编译和转换，一般用于设置接收人。</p></td>
         </tr>
 
     
@@ -386,7 +408,7 @@
                 </td>
             
 
-            <td class="description last"><p>模板</p></td>
+            <td class="description last"><p><a href="Sendmail.html#template"><code>模板</code></a></p></td>
         </tr>
 
     
@@ -475,7 +497,7 @@
 
     
 
-    <h4 class="name" id="template"><span class="type-signature"></span>template<span class="signature">(template, data<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="template"><span class="type-signature"></span>template<span class="signature">(message, data)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
@@ -487,7 +509,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="sendmail.js.html">sendmail.js</a>, <a href="sendmail.js.html#line55">line 55</a>
+        <a href="sendmail.js.html">sendmail.js</a>, <a href="sendmail.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -517,6 +539,13 @@
 
     
 
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://nodemailer.com/message/">https://nodemailer.com/message/</a></li>
+        </ul>
+    </dd>
     
 
     
@@ -553,11 +582,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
-        
-        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -569,7 +594,7 @@
 
         <tr>
             
-                <td class="name"><code>template</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
@@ -582,22 +607,15 @@
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
-                <td class="default">
-                
-                </td>
-            
 
-            <td class="description last"><p>模板</p></td>
+            <td class="description last"><p>消息，<code>nodemailer</code>的<code>message</code>，支持其所有参数。</p>
+<p>其中：</p>
+<ul>
+<li><code>subject</code>：支持<code>Handlebars</code>模板引擎，数据来源于<code>data</code></li>
+<li><code>html</code>：支持<code>Handlerbars</code>模板引擎，数据来源于<code>data</code>，支持<code>Markdown</code>格式编码</li>
+</ul></td>
         </tr>
 
     
@@ -617,23 +635,7 @@
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
 
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <code>{}</code>
-                
-                </td>
             
 
             <td class="description last"><p>数据</p></td>
@@ -703,7 +705,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Mar 10 2020 21:00:21 GMT+0800 (中国标准时间) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Mar 11 2020 10:54:30 GMT+0800 (中国标准时间) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

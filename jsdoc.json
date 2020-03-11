@@ -30,7 +30,7 @@
     "collapse": true,
     "menu": {
       "GitHub": {
-        "href": "https://github.com/axolo",
+        "href": "https://github.com/axolo/egg-sendmail",
         "target": "_blank",
         "class": "menu-item",
         "id": "website_link"

@@ -1,6 +1,6 @@
 {
   "name": "@axolo/egg-sendmail",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "egg-sendmail",
   "eggPlugin": {
     "name": "sendmail"
@@ -9,15 +9,15 @@
     "egg",
     "eggPlugin",
     "egg-plugin",
-    "smtp",
-    "sendmail",
-    "send mail",
     "egg-sendmail",
-    "sendmail egg"
+    "egg sendmail",
+    "egg nodemailer",
+    "egg mail",
+    "egg smtp",
+    "sendmail"
   ],
   "dependencies": {
     "handlebars": "^4.7.3",
-    "lodash": "^4.17.15",
     "marked": "^0.8.0",
     "nodemailer": "^6.4.4"
   },
@@ -44,7 +44,7 @@
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
     "autod": "autod",
-    "jsdoc": "jsdoc ./lib -c jsdoc.json --readme README.md"
+    "jsdoc": "jsdoc ./lib -c jsdoc.json --readme README.zh_CN.md"
   },
   "files": [
     "config",
